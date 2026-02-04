@@ -747,6 +747,8 @@ body::before {
     padding-top: 24px;
     border-top: 1px solid var(--glass-border);
     animation: slideDown 0.3s ease;
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 .topic-card.expanded .topic-content {
@@ -1063,10 +1065,14 @@ code {
     
     pre {
         padding: 16px;
+        max-width: 100%;
+        overflow-x: auto;
     }
     
     code {
         font-size: 0.8rem;
+        word-wrap: break-word;
+        white-space: pre-wrap;
     }
 }
 
