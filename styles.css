@@ -1080,8 +1080,10 @@ code {
     }
     
     .hero-stats {
-        flex-direction: column;
-        gap: 24px;
+        flex-direction: row;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .topic-header {
