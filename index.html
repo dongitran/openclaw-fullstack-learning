@@ -1,0 +1,2541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Learning Hub 🗄️</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">🗄️</div>
+            <h2>DB Learning Hub</h2>
+            <button class="close-sidebar" id="closeSidebar">✕</button>
+        </div>
+        <div class="progress-section">
+            <div class="progress-info">
+                <span>Your Progress</span>
+                <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text"><span id="completedCount">0</span> / 25 topics completed</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link active" data-section="home">🏠 Home</a></li>
+            <li><a href="#module1" class="nav-link" data-section="module1">📚 Database Fundamentals</a></li>
+            <li><a href="#module2" class="nav-link" data-section="module2">🔍 SQL Operations</a></li>
+            <li><a href="#module3" class="nav-link" data-section="module3">⚡ Indexing & Performance</a></li>
+            <li><a href="#module4" class="nav-link" data-section="module4">🔒 Transactions</a></li>
+            <li><a href="#module5" class="nav-link" data-section="module5">🏭 Data Warehousing</a></li>
+            <li><a href="#module6" class="nav-link" data-section="module6">🚀 Advanced Features</a></li>
+        </ul>
+        <button class="reset-progress" id="resetProgress">🔄 Reset Progress</button>
+    </nav>
+
+    <!-- Overlay for mobile -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="🔍 Search topics...">
+                <div class="search-results" id="searchResults"></div>
+            </div>
+        </header>
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="hero-icon">🗄️</div>
+                    <h1>Database Learning Hub</h1>
+                    <p class="hero-subtitle">Master database concepts from fundamentals to advanced techniques</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">25</span>
+                            <span class="stat-label">Topics</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Modules</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Possibilities</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-decoration">
+                    <div class="floating-card card-1">📊</div>
+                    <div class="floating-card card-2">🔍</div>
+                    <div class="floating-card card-3">⚡</div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Choose Your Learning Path</h2>
+            
+            <div class="modules-grid">
+                <a href="#module1" class="module-card" data-module="1">
+                    <div class="module-icon">📚</div>
+                    <div class="module-info">
+                        <h3>Database Fundamentals</h3>
+                        <p>Core concepts every DBA should know</p>
+                        <div class="module-meta">
+                            <span class="topic-count">3 topics</span>
+                            <span class="difficulty beginner">Beginner</span>
+                        </div>
+                        <div class="module-progress">
+                            <div class="module-progress-bar" data-module="1"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#module2" class="module-card" data-module="2">
+                    <div class="module-icon">🔍</div>
+                    <div class="module-info">
+                        <h3>SQL Operations</h3>
+                        <p>Master SQL queries and operations</p>
+                        <div class="module-meta">
+                            <span class="topic-count">6 topics</span>
+                            <span class="difficulty intermediate">Intermediate</span>
+                        </div>
+                        <div class="module-progress">
+                            <div class="module-progress-bar" data-module="2"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#module3" class="module-card" data-module="3">
+                    <div class="module-icon">⚡</div>
+                    <div class="module-info">
+                        <h3>Indexing & Performance</h3>
+                        <p>Optimize queries and database performance</p>
+                        <div class="module-meta">
+                            <span class="topic-count">3 topics</span>
+                            <span class="difficulty advanced">Advanced</span>
+                        </div>
+                        <div class="module-progress">
+                            <div class="module-progress-bar" data-module="3"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#module4" class="module-card" data-module="4">
+                    <div class="module-icon">🔒</div>
+                    <div class="module-info">
+                        <h3>Transactions & Concurrency</h3>
+                        <p>Understanding ACID and isolation</p>
+                        <div class="module-meta">
+                            <span class="topic-count">5 topics</span>
+                            <span class="difficulty advanced">Advanced</span>
+                        </div>
+                        <div class="module-progress">
+                            <div class="module-progress-bar" data-module="4"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#module5" class="module-card" data-module="5">
+                    <div class="module-icon">🏭</div>
+                    <div class="module-info">
+                        <h3>Data Warehousing</h3>
+                        <p>ETL, OLAP, and dimensional modeling</p>
+                        <div class="module-meta">
+                            <span class="topic-count">3 topics</span>
+                            <span class="difficulty intermediate">Intermediate</span>
+                        </div>
+                        <div class="module-progress">
+                            <div class="module-progress-bar" data-module="5"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#module6" class="module-card" data-module="6">
+                    <div class="module-icon">🚀</div>
+                    <div class="module-info">
+                        <h3>Advanced Features</h3>
+                        <p>Cutting-edge database technologies</p>
+                        <div class="module-meta">
+                            <span class="topic-count">5 topics</span>
+                            <span class="difficulty expert">Expert</span>
+                        </div>
+                        <div class="module-progress">
+                            <div class="module-progress-bar" data-module="6"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Module 1: Database Fundamentals -->
+        <section id="module1" class="section">
+            <div class="section-header">
+                <button class="back-btn" data-section="home">← Back</button>
+                <h2><span class="module-emoji">📚</span> Database Fundamentals</h2>
+            </div>
+            <div class="topics-grid">
+                <article class="topic-card" data-topic="normalization">
+                    <div class="topic-header">
+                        <span class="topic-icon">📝</span>
+                        <div class="topic-badges">
+                            <span class="badge theory">Theory</span>
+                            <span class="badge beginner">Beginner</span>
+                        </div>
+                        <button class="mark-complete" data-topic="normalization" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Normalization (1NF, 2NF, 3NF)</h3>
+                    <p class="topic-summary">Database normalization is the process of organizing data to minimize redundancy and dependency.</p>
+                    <div class="topic-content">
+                        <h4>First Normal Form (1NF)</h4>
+                        <ul>
+                            <li>Each cell contains a single value</li>
+                            <li>No repeating groups or arrays</li>
+                            <li>Each column has atomic values</li>
+                        </ul>
+                        <pre><code class="sql">-- Violates 1NF (multiple values in phone column)
+CREATE TABLE bad_customers (
+    id INT,
+    name VARCHAR(100),
+    phones VARCHAR(255) -- "123-456, 789-012"
+);
+
+-- 1NF Compliant
+CREATE TABLE customers (
+    id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+CREATE TABLE customer_phones (
+    customer_id INT,
+    phone VARCHAR(20),
+    FOREIGN KEY (customer_id) REFERENCES customers(id)
+);</code></pre>
+
+                        <h4>Second Normal Form (2NF)</h4>
+                        <ul>
+                            <li>Must be in 1NF</li>
+                            <li>All non-key attributes fully dependent on the entire primary key</li>
+                            <li>No partial dependencies (relevant for composite keys)</li>
+                        </ul>
+                        <pre><code class="sql">-- Violates 2NF (teacher_name depends only on course_id, not entire PK)
+CREATE TABLE bad_enrollments (
+    student_id INT,
+    course_id INT,
+    student_name VARCHAR(100),
+    course_name VARCHAR(100),
+    teacher_name VARCHAR(100), -- Only depends on course_id
+    PRIMARY KEY (student_id, course_id)
+);
+
+-- 2NF Compliant
+CREATE TABLE courses (
+    course_id INT PRIMARY KEY,
+    course_name VARCHAR(100),
+    teacher_name VARCHAR(100)
+);
+
+CREATE TABLE enrollments (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);</code></pre>
+
+                        <h4>Third Normal Form (3NF)</h4>
+                        <ul>
+                            <li>Must be in 2NF</li>
+                            <li>No transitive dependencies</li>
+                            <li>Non-key attributes depend only on the primary key</li>
+                        </ul>
+                        <pre><code class="sql">-- Violates 3NF (city_population depends on city, not directly on student_id)
+CREATE TABLE bad_students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    city VARCHAR(100),
+    city_population INT -- Transitively dependent
+);
+
+-- 3NF Compliant
+CREATE TABLE cities (
+    city_id INT PRIMARY KEY,
+    city_name VARCHAR(100),
+    population INT
+);
+
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    city_id INT,
+    FOREIGN KEY (city_id) REFERENCES cities(city_id)
+);</code></pre>
+
+                        <div class="key-takeaway">
+                            <strong>💡 Key Takeaway:</strong> Normalization reduces redundancy but may require joins. Balance normalization with query performance needs.
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="denormalization">
+                    <div class="topic-header">
+                        <span class="topic-icon">📊</span>
+                        <div class="topic-badges">
+                            <span class="badge concept">Concept</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="denormalization" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Denormalization</h3>
+                    <p class="topic-summary">Intentionally adding redundancy to improve read performance at the cost of write complexity.</p>
+                    <div class="topic-content">
+                        <h4>When to Denormalize</h4>
+                        <ul>
+                            <li><strong>Read-heavy workloads:</strong> Frequent queries, infrequent updates</li>
+                            <li><strong>Complex joins hurting performance:</strong> Multiple table joins are slow</li>
+                            <li><strong>Reporting/Analytics:</strong> Pre-aggregated data for dashboards</li>
+                            <li><strong>Real-time requirements:</strong> Sub-millisecond response needs</li>
+                        </ul>
+
+                        <h4>Common Denormalization Techniques</h4>
+                        <pre><code class="sql">-- 1. Storing computed/aggregated values
+CREATE TABLE orders_denormalized (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    -- Denormalized: total stored instead of calculated
+    total_amount DECIMAL(10,2),
+    item_count INT
+);
+
+-- 2. Duplicating data to avoid joins
+CREATE TABLE blog_posts (
+    post_id INT PRIMARY KEY,
+    title VARCHAR(255),
+    content TEXT,
+    author_id INT,
+    -- Denormalized: author name stored here
+    author_name VARCHAR(100),
+    published_date DATE
+);
+
+-- 3. Array/JSON columns (PostgreSQL)
+CREATE TABLE products (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    -- Denormalized: tags stored as array
+    tags TEXT[],
+    attributes JSONB
+);
+
+-- 4. Materialized Views (managed denormalization)
+CREATE MATERIALIZED VIEW daily_sales AS
+SELECT 
+    DATE(order_date) as sale_date,
+    COUNT(*) as order_count,
+    SUM(total_amount) as revenue
+FROM orders
+GROUP BY DATE(order_date);
+
+-- Refresh when needed
+REFRESH MATERIALIZED VIEW daily_sales;</code></pre>
+
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h5>✅ Advantages</h5>
+                                <ul>
+                                    <li>Faster read queries</li>
+                                    <li>Simpler query logic</li>
+                                    <li>Better for analytics</li>
+                                    <li>Reduced join overhead</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h5>❌ Disadvantages</h5>
+                                <ul>
+                                    <li>Data inconsistency risk</li>
+                                    <li>Complex writes/updates</li>
+                                    <li>More storage required</li>
+                                    <li>Harder to maintain</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="surrogate-key">
+                    <div class="topic-header">
+                        <span class="topic-icon">🔑</span>
+                        <div class="topic-badges">
+                            <span class="badge design">Design</span>
+                            <span class="badge beginner">Beginner</span>
+                        </div>
+                        <button class="mark-complete" data-topic="surrogate-key" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Surrogate Key</h3>
+                    <p class="topic-summary">An artificial primary key with no business meaning, typically auto-incremented or UUID.</p>
+                    <div class="topic-content">
+                        <h4>Surrogate vs Natural Keys</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Surrogate Key</th>
+                                <th>Natural Key</th>
+                            </tr>
+                            <tr>
+                                <td>Example</td>
+                                <td>customer_id: 1, 2, 3...</td>
+                                <td>email: user@example.com</td>
+                            </tr>
+                            <tr>
+                                <td>Business Meaning</td>
+                                <td>None</td>
+                                <td>Yes</td>
+                            </tr>
+                            <tr>
+                                <td>Stability</td>
+                                <td>Never changes</td>
+                                <td>May change (e.g., email)</td>
+                            </tr>
+                            <tr>
+                                <td>Size</td>
+                                <td>Small (INT/BIGINT)</td>
+                                <td>Variable (VARCHAR)</td>
+                            </tr>
+                        </table>
+
+                        <h4>Implementation Examples</h4>
+                        <pre><code class="sql">-- Auto-increment (MySQL, SQL Server)
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    name VARCHAR(100)
+);
+
+-- SERIAL (PostgreSQL)
+CREATE TABLE products (
+    product_id SERIAL PRIMARY KEY,
+    sku VARCHAR(50) UNIQUE,
+    name VARCHAR(255)
+);
+
+-- UUID (PostgreSQL, good for distributed systems)
+CREATE TABLE orders (
+    order_id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    customer_id INT,
+    order_date TIMESTAMP
+);
+
+-- IDENTITY (SQL Server)
+CREATE TABLE employees (
+    employee_id INT IDENTITY(1,1) PRIMARY KEY,
+    ssn VARCHAR(11) UNIQUE, -- Natural key as alternate
+    name VARCHAR(100)
+);</code></pre>
+
+                        <h4>When to Use Surrogate Keys</h4>
+                        <ul>
+                            <li>✅ Natural key is long or complex (composite keys)</li>
+                            <li>✅ Natural key may change over time</li>
+                            <li>✅ Need consistent reference in foreign keys</li>
+                            <li>✅ Performance optimization (smaller indexes)</li>
+                            <li>✅ Working with ORMs and frameworks</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Module 2: SQL Operations -->
+        <section id="module2" class="section">
+            <div class="section-header">
+                <button class="back-btn" data-section="home">← Back</button>
+                <h2><span class="module-emoji">🔍</span> SQL Operations</h2>
+            </div>
+            <div class="topics-grid">
+                <article class="topic-card" data-topic="union">
+                    <div class="topic-header">
+                        <span class="topic-icon">➕</span>
+                        <div class="topic-badges">
+                            <span class="badge syntax">Syntax</span>
+                            <span class="badge beginner">Beginner</span>
+                        </div>
+                        <button class="mark-complete" data-topic="union" title="Mark as complete">○</button>
+                    </div>
+                    <h3>UNION vs UNION ALL</h3>
+                    <p class="topic-summary">Combine results from multiple SELECT statements with or without deduplication.</p>
+                    <div class="topic-content">
+                        <h4>The Difference</h4>
+                        <div class="comparison-box">
+                            <div class="comparison-item">
+                                <h5>UNION</h5>
+                                <p>Removes duplicate rows (slower, more memory)</p>
+                                <pre><code class="sql">SELECT city FROM customers
+UNION
+SELECT city FROM suppliers;
+-- Returns: New York, Los Angeles, Chicago
+-- (each city appears once)</code></pre>
+                            </div>
+                            <div class="comparison-item">
+                                <h5>UNION ALL</h5>
+                                <p>Keeps all rows including duplicates (faster)</p>
+                                <pre><code class="sql">SELECT city FROM customers
+UNION ALL
+SELECT city FROM suppliers;
+-- Returns: New York, New York, Los Angeles, Chicago
+-- (duplicates preserved)</code></pre>
+                            </div>
+                        </div>
+
+                        <h4>Requirements</h4>
+                        <ul>
+                            <li>Same number of columns in each SELECT</li>
+                            <li>Compatible data types (implicit conversion allowed)</li>
+                            <li>Column names from first SELECT used</li>
+                        </ul>
+
+                        <h4>Performance Comparison</h4>
+                        <pre><code class="sql">-- UNION: Requires sort + deduplication
+-- Time complexity: O(n log n)
+-- Memory: Needs temporary storage
+
+-- UNION ALL: Simple concatenation
+-- Time complexity: O(n)
+-- Memory: Streams results
+
+-- Practical Example: Report combining
+SELECT 
+    'Sale' as transaction_type,
+    order_date as transaction_date,
+    total_amount as amount
+FROM orders
+WHERE order_date >= '2024-01-01'
+
+UNION ALL
+
+SELECT 
+    'Refund' as transaction_type,
+    refund_date as transaction_date,
+    -refund_amount as amount
+FROM refunds
+WHERE refund_date >= '2024-01-01'
+
+ORDER BY transaction_date;</code></pre>
+
+                        <div class="tip-box">
+                            <strong>⚡ Performance Tip:</strong> Use UNION ALL unless you specifically need deduplication. It's significantly faster as it avoids the sorting and comparison overhead.
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="subquery-vs-join">
+                    <div class="topic-header">
+                        <span class="topic-icon">🔄</span>
+                        <div class="topic-badges">
+                            <span class="badge query">Query</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="subquery-vs-join" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Subquery vs JOIN</h3>
+                    <p class="topic-summary">Two approaches to combine data from multiple tables. Each has optimal use cases.</p>
+                    <div class="topic-content">
+                        <h4>Comparing Approaches</h4>
+                        <pre><code class="sql">-- Task: Find customers who have placed orders
+
+-- Using JOIN
+SELECT DISTINCT c.customer_id, c.name
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id;
+
+-- Using Subquery (correlated)
+SELECT customer_id, name
+FROM customers c
+WHERE EXISTS (
+    SELECT 1 FROM orders o 
+    WHERE o.customer_id = c.customer_id
+);
+
+-- Using Subquery (non-correlated)
+SELECT customer_id, name
+FROM customers
+WHERE customer_id IN (
+    SELECT DISTINCT customer_id FROM orders
+);</code></pre>
+
+                        <h4>When to Use What</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Use Case</th>
+                                <th>Best Choice</th>
+                                <th>Why</th>
+                            </tr>
+                            <tr>
+                                <td>Need columns from both tables</td>
+                                <td>JOIN</td>
+                                <td>Can select any column</td>
+                            </tr>
+                            <tr>
+                                <td>Existence check only</td>
+                                <td>EXISTS</td>
+                                <td>Stops at first match</td>
+                            </tr>
+                            <tr>
+                                <td>List of values needed</td>
+                                <td>IN</td>
+                                <td>Simple syntax</td>
+                            </tr>
+                            <tr>
+                                <td>Aggregation per row</td>
+                                <td>Correlated subquery</td>
+                                <td>Row-by-row calculation</td>
+                            </tr>
+                            <tr>
+                                <td>Large datasets</td>
+                                <td>JOIN (usually)</td>
+                                <td>Better optimizer choices</td>
+                            </tr>
+                        </table>
+
+                        <h4>Performance Example</h4>
+                        <pre><code class="sql">-- Find top 3 products by revenue per category
+-- JOIN approach (usually faster)
+SELECT 
+    p.category_id,
+    p.product_name,
+    SUM(od.quantity * od.price) as revenue
+FROM products p
+JOIN order_details od ON p.product_id = od.product_id
+GROUP BY p.category_id, p.product_id, p.product_name
+QUALIFY ROW_NUMBER() OVER (
+    PARTITION BY p.category_id 
+    ORDER BY SUM(od.quantity * od.price) DESC
+) <= 3;
+
+-- Correlated subquery approach
+SELECT 
+    category_id,
+    product_name,
+    revenue
+FROM (
+    SELECT 
+        p.category_id,
+        p.product_name,
+        (SELECT SUM(quantity * price) 
+         FROM order_details od 
+         WHERE od.product_id = p.product_id) as revenue
+    FROM products p
+) t
+WHERE (
+    SELECT COUNT(*)
+    FROM products p2
+    WHERE p2.category_id = t.category_id
+    AND (SELECT SUM(quantity * price) 
+         FROM order_details od2 
+         WHERE od2.product_id = p2.product_id) > t.revenue
+) < 3;</code></pre>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="correlated-subquery">
+                    <div class="topic-header">
+                        <span class="topic-icon">🔗</span>
+                        <div class="topic-badges">
+                            <span class="badge advanced">Advanced</span>
+                            <span class="badge query">Query</span>
+                        </div>
+                        <button class="mark-complete" data-topic="correlated-subquery" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Correlated Subquery</h3>
+                    <p class="topic-summary">A subquery that references columns from the outer query, executing once per outer row.</p>
+                    <div class="topic-content">
+                        <h4>How It Works</h4>
+                        <pre><code class="sql">-- For each employee, find their salary relative to dept average
+SELECT 
+    e.employee_id,
+    e.name,
+    e.department_id,
+    e.salary,
+    (SELECT AVG(salary) 
+     FROM employees e2 
+     WHERE e2.department_id = e.department_id) as dept_avg,
+    e.salary - (SELECT AVG(salary) 
+                FROM employees e2 
+                WHERE e2.department_id = e.department_id) as diff
+FROM employees e;
+
+-- Executed: Outer query gets 1000 rows
+-- Subquery runs 1000 times (once per employee)</code></pre>
+
+                        <h4>Common Use Cases</h4>
+                        <pre><code class="sql">-- 1. Find employees earning above department average
+SELECT name, salary, department_id
+FROM employees e
+WHERE salary > (
+    SELECT AVG(salary) 
+    FROM employees 
+    WHERE department_id = e.department_id
+);
+
+-- 2. Running totals (pre-window function era)
+SELECT 
+    order_id,
+    order_date,
+    amount,
+    (SELECT SUM(amount) 
+     FROM orders o2 
+     WHERE o2.order_date <= o1.order_date) as running_total
+FROM orders o1
+ORDER BY order_date;
+
+-- 3. Find latest order per customer
+SELECT c.customer_id, c.name, o.order_id, o.order_date
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+WHERE o.order_date = (
+    SELECT MAX(order_date) 
+    FROM orders o2 
+    WHERE o2.customer_id = c.customer_id
+);</code></pre>
+
+                        <h4>Performance Considerations</h4>
+                        <div class="warning-box">
+                            <strong>⚠️ Warning:</strong> Correlated subqueries can be slow on large datasets because they execute once per outer row. Modern optimizers can sometimes convert them to joins, but not always.
+                        </div>
+
+                        <h4>Modern Alternatives</h4>
+                        <pre><code class="sql">-- Instead of correlated subquery for ranking
+-- Use window functions (much faster!)
+
+-- OLD: Correlated subquery
+SELECT name, salary
+FROM employees e
+WHERE salary >= ALL (
+    SELECT salary 
+    FROM employees 
+    WHERE department_id = e.department_id
+);
+
+-- NEW: Window function
+SELECT name, salary
+FROM (
+    SELECT 
+        name,
+        salary,
+        RANK() OVER (PARTITION BY department_id ORDER BY salary DESC) as rank
+    FROM employees
+) ranked
+WHERE rank = 1;</code></pre>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="exists-vs-in">
+                    <div class="topic-header">
+                        <span class="topic-icon">❓</span>
+                        <div class="topic-badges">
+                            <span class="badge syntax">Syntax</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="exists-vs-in" title="Mark as complete">○</button>
+                    </div>
+                    <h3>EXISTS vs IN</h3>
+                    <p class="topic-summary">Two ways to check for existence in a subquery. EXISTS is generally preferred for performance.</p>
+                    <div class="topic-content">
+                        <h4>Basic Comparison</h4>
+                        <pre><code class="sql">-- Find customers who have placed orders
+
+-- Using IN
+SELECT name FROM customers
+WHERE customer_id IN (SELECT customer_id FROM orders);
+
+-- Using EXISTS
+SELECT name FROM customers c
+WHERE EXISTS (
+    SELECT 1 FROM orders o 
+    WHERE o.customer_id = c.customer_id
+);
+
+-- Both return the same result, but...</code></pre>
+
+                        <h4>Key Differences</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Aspect</th>
+                                <th>IN</th>
+                                <th>EXISTS</th>
+                            </tr>
+                            <tr>
+                                <td>NULL handling</td>
+                                <td>Returns UNKNOWN (may skip rows)</td>
+                                <td>Works correctly with NULLs</td>
+                            </tr>
+                            <tr>
+                                <td>Performance</td>
+                                <td>Builds list, checks membership</td>
+                                <td>Stops at first match</td>
+                            </tr>
+                            <tr>
+                                <td>Duplicates</td>
+                                <td>Must handle distinct values</td>
+                                <td>Doesn't matter</td>
+                            </tr>
+                            <tr>
+                                <td>Correlated</td>
+                                <td>Can be non-correlated</td>
+                                <td>Always correlated</td>
+                            </tr>
+                        </table>
+
+                        <h4>NULL Handling Trap</h4>
+                        <pre><code class="sql">-- Dangerous with NULLs!
+SELECT * FROM products
+WHERE category_id IN (SELECT category_id FROM deprecated_categories);
+-- If deprecated_categories has NULLs, query may return nothing!
+
+-- Safer with EXISTS
+SELECT * FROM products p
+WHERE EXISTS (
+    SELECT 1 FROM deprecated_categories dc
+    WHERE dc.category_id = p.category_id
+);
+-- Works correctly even with NULLs</code></pre>
+
+                        <h4>NOT EXISTS vs NOT IN</h4>
+                        <pre><code class="sql">-- Find customers with NO orders
+
+-- Using NOT EXISTS (RECOMMENDED)
+SELECT name FROM customers c
+WHERE NOT EXISTS (
+    SELECT 1 FROM orders o 
+    WHERE o.customer_id = c.customer_id
+);
+
+-- Using NOT IN (DANGEROUS with NULLs!)
+SELECT name FROM customers
+WHERE customer_id NOT IN (
+    SELECT customer_id FROM orders  -- If any NULL, returns empty!
+);</code></pre>
+
+                        <div class="tip-box">
+                            <strong>✅ Best Practice:</strong> Use EXISTS for existence checks, especially with NOT. It's faster and handles NULLs correctly.
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="cte">
+                    <div class="topic-header">
+                        <span class="topic-icon">📋</span>
+                        <div class="topic-badges">
+                            <span class="badge syntax">Syntax</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="cte" title="Mark as complete">○</button>
+                    </div>
+                    <h3>CTE (Common Table Expression)</h3>
+                    <p class="topic-summary">Named temporary result sets that make complex queries more readable and maintainable.</p>
+                    <div class="topic-content">
+                        <h4>Basic Syntax</h4>
+                        <pre><code class="sql">-- Non-recursive CTE
+WITH cte_name AS (
+    SELECT column1, column2
+    FROM table_name
+    WHERE condition
+)
+SELECT * FROM cte_name;
+
+-- Multiple CTEs
+WITH 
+    cte1 AS (SELECT * FROM table1),
+    cte2 AS (SELECT * FROM table2 WHERE id IN (SELECT id FROM cte1))
+SELECT * FROM cte2;</code></pre>
+
+                        <h4>Practical Examples</h4>
+                        <pre><code class="sql">-- 1. Break down complex query
+WITH 
+    monthly_sales AS (
+        SELECT 
+            DATE_TRUNC('month', order_date) as month,
+            SUM(total_amount) as revenue
+        FROM orders
+        WHERE order_date >= '2024-01-01'
+        GROUP BY DATE_TRUNC('month', order_date)
+    ),
+    prev_month AS (
+        SELECT 
+            month,
+            revenue,
+            LAG(revenue) OVER (ORDER BY month) as prev_revenue
+        FROM monthly_sales
+    )
+SELECT 
+    month,
+    revenue,
+    prev_revenue,
+    ROUND((revenue - prev_revenue) / prev_revenue * 100, 2) as growth_pct
+FROM prev_month;
+
+-- 2. Recursive CTE: Employee hierarchy
+WITH RECURSIVE org_hierarchy AS (
+    -- Base case: top-level managers
+    SELECT 
+        employee_id, 
+        name, 
+        manager_id, 
+        0 as level
+    FROM employees
+    WHERE manager_id IS NULL
+    
+    UNION ALL
+    
+    -- Recursive case: employees with managers
+    SELECT 
+        e.employee_id,
+        e.name,
+        e.manager_id,
+        oh.level + 1
+    FROM employees e
+    JOIN org_hierarchy oh ON e.manager_id = oh.employee_id
+)
+SELECT 
+    REPEAT('  ', level) || name as org_chart,
+    level
+FROM org_hierarchy
+ORDER BY level, name;</code></pre>
+
+                        <h4>CTE vs Subquery vs Temp Table</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Feature</th>
+                                <th>CTE</th>
+                                <th>Subquery</th>
+                                <th>Temp Table</th>
+                            </tr>
+                            <tr>
+                                <td>Readability</td>
+                                <td>⭐⭐⭐</td>
+                                <td>⭐⭐</td>
+                                <td>⭐⭐⭐</td>
+                            </tr>
+                            <tr>
+                                <td>Reusability</td>
+                                <td>Within query only</td>
+                                <td>None</td>
+                                <td>Session scope</td>
+                            </tr>
+                            <tr>
+                                <td>Performance</td>
+                                <td>Usually inlined</td>
+                                <td>Inlined</td>
+                                <td>Physical storage</td>
+                            </tr>
+                            <tr>
+                                <td>Recursion</td>
+                                <td>✅ Supported</td>
+                                <td>❌ Not supported</td>
+                                <td>Manual implementation</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="pivot">
+                    <div class="topic-header">
+                        <span class="topic-icon">🔄</span>
+                        <div class="topic-badges">
+                            <span class="badge syntax">Syntax</span>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <button class="mark-complete" data-topic="pivot" title="Mark as complete">○</button>
+                    </div>
+                    <h3>PIVOT Operation</h3>
+                    <p class="topic-summary">Transform rows into columns for reporting and analysis (cross-tabulation).</p>
+                    <div class="topic-content">
+                        <h4>Sample Data</h4>
+                        <pre><code class="sql">-- Sales data (rows)
+SELECT * FROM sales;
+-- product | quarter | amount
+-- Laptop    Q1        10000
+-- Laptop    Q2        15000
+-- Laptop    Q3        12000
+-- Desktop   Q1         8000
+-- Desktop   Q2         9000</code></pre>
+
+                        <h4>PIVOT Syntax (SQL Server)</h4>
+                        <pre><code class="sql">SELECT 
+    product,
+    [Q1], [Q2], [Q3], [Q4]
+FROM 
+    (SELECT product, quarter, amount FROM sales) AS source
+PIVOT (
+    SUM(amount)
+    FOR quarter IN ([Q1], [Q2], [Q3], [Q4])
+) AS pivot_table;</code></pre>
+
+                        <h4>Crosstab (PostgreSQL)</h4>
+                        <pre><code class="sql">-- Using crosstab function (tablefunc extension)
+CREATE EXTENSION IF NOT EXISTS tablefunc;
+
+SELECT * FROM crosstab(
+    'SELECT product, quarter, amount 
+     FROM sales 
+     ORDER BY product, quarter',
+    'SELECT DISTINCT quarter FROM sales ORDER BY quarter'
+) AS ct(product TEXT, Q1 NUMERIC, Q2 NUMERIC, Q3 NUMERIC, Q4 NUMERIC);
+
+-- Using CASE (more flexible)
+SELECT 
+    product,
+    SUM(CASE WHEN quarter = 'Q1' THEN amount ELSE 0 END) as Q1,
+    SUM(CASE WHEN quarter = 'Q2' THEN amount ELSE 0 END) as Q2,
+    SUM(CASE WHEN quarter = 'Q3' THEN amount ELSE 0 END) as Q3,
+    SUM(CASE WHEN quarter = 'Q4' THEN amount ELSE 0 END) as Q4,
+    SUM(amount) as total
+FROM sales
+GROUP BY product;</code></pre>
+
+                        <h4>Dynamic Pivot</h4>
+                        <pre><code class="sql">-- SQL Server dynamic pivot
+DECLARE @cols NVARCHAR(MAX), @sql NVARCHAR(MAX);
+
+SELECT @cols = STRING_AGG(QUOTENAME(quarter), ',')
+FROM (SELECT DISTINCT quarter FROM sales) t;
+
+SET @sql = N'
+SELECT product, ' + @cols + '
+FROM 
+    (SELECT product, quarter, amount FROM sales) AS src
+PIVOT (
+    SUM(amount) FOR quarter IN (' + @cols + ')
+) AS pvt';
+
+EXEC sp_executesql @sql;</code></pre>
+
+                        <h4>UNPIVOT (Reverse Operation)</h4>
+                        <pre><code class="sql">-- Transform columns back to rows
+SELECT product, quarter, amount
+FROM 
+    (SELECT product, Q1, Q2, Q3, Q4 FROM sales_pivot) AS source
+UNPIVOT (
+    amount FOR quarter IN (Q1, Q2, Q3, Q4)
+) AS unpvt;</code></pre>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Module 3: Indexing & Performance -->
+        <section id="module3" class="section">
+            <div class="section-header">
+                <button class="back-btn" data-section="home">← Back</button>
+                <h2><span class="module-emoji">⚡</span> Indexing & Performance</h2>
+            </div>
+            <div class="topics-grid">
+                <article class="topic-card" data-topic="covering-index">
+                    <div class="topic-header">
+                        <span class="topic-icon">📔</span>
+                        <div class="topic-badges">
+                            <span class="badge performance">Performance</span>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <button class="mark-complete" data-topic="covering-index" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Covering Index</h3>
+                    <p class="topic-summary">An index that contains all columns needed for a query, eliminating table lookups.</p>
+                    <div class="topic-content">
+                        <h4>How It Works</h4>
+                        <pre><code class="sql">-- Query that needs covering index
+SELECT customer_id, order_date, total_amount
+FROM orders
+WHERE customer_id = 123
+ORDER BY order_date DESC;
+
+-- Regular index (requires table lookup)
+CREATE INDEX idx_customer ON orders(customer_id);
+-- Still needs to fetch order_date, total_amount from table
+
+-- Covering index (includes all needed columns)
+CREATE INDEX idx_customer_covering 
+ON orders(customer_id, order_date, total_amount);
+-- All data is in the index! No table access needed.</code></pre>
+
+                        <h4>Include Columns (SQL Server, PostgreSQL)</h4>
+                        <pre><code class="sql">-- SQL Server: INCLUDE for non-key columns
+CREATE INDEX idx_orders_customer 
+ON orders(customer_id, order_date)
+INCLUDE (total_amount, status);
+
+-- PostgreSQL: Include columns (v11+)
+CREATE INDEX idx_orders_customer 
+ON orders(customer_id, order_date) 
+INCLUDE (total_amount, status);
+
+-- MySQL: All columns must be in key (no INCLUDE)
+CREATE INDEX idx_orders_customer 
+ON orders(customer_id, order_date, total_amount, status);</code></pre>
+
+                        <h4>Execution Plan Comparison</h4>
+                        <div class="comparison-box">
+                            <div class="comparison-item">
+                                <h5>Without Covering Index</h5>
+                                <pre>Index Seek + Key Lookup
+├── Cost: Higher
+├── I/O: Index + Table pages
+└── Network: More data transfer</pre>
+                            </div>
+                            <div class="comparison-item">
+                                <h5>With Covering Index</h5>
+                                <pre>Index Seek Only
+├── Cost: Lower
+├── I/O: Index pages only
+└── Network: Minimal data</pre>
+                            </div>
+                        </div>
+
+                        <h4>Trade-offs</h4>
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h5>✅ Benefits</h5>
+                                <ul>
+                                    <li>Faster SELECT queries</li>
+                                    <li>Reduced I/O operations</li>
+                                    <li>Better cache utilization</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h5>❌ Costs</h5>
+                                <ul>
+                                    <li>Larger index size</li>
+                                    <li>Slower INSERT/UPDATE/DELETE</li>
+                                    <li>More memory usage</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="clustered-index">
+                    <div class="topic-header">
+                        <span class="topic-icon">🗂️</span>
+                        <div class="topic-badges">
+                            <span class="badge design">Design</span>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <button class="mark-complete" data-topic="clustered-index" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Clustered Index</h3>
+                    <p class="topic-summary">Determines the physical order of data in a table. Only one per table.</p>
+                    <div class="topic-content">
+                        <h4>Clustered vs Non-Clustered</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Feature</th>
+                                <th>Clustered Index</th>
+                                <th>Non-Clustered Index</th>
+                            </tr>
+                            <tr>
+                                <td>Data storage</td>
+                                <td>Leaf nodes ARE the data</td>
+                                <td>Leaf nodes have pointers</td>
+                            </tr>
+                            <tr>
+                                <td>Per table limit</td>
+                                <td>1 only</td>
+                                <td>Multiple (usually 999+)</td>
+                            </tr>
+                            <tr>
+                                <td>Default on PK</td>
+                                <td>Usually yes</td>
+                                <td>Separate</td>
+                            </tr>
+                            <tr>
+                                <td>Range queries</td>
+                                <td>Excellent</td>
+                                <td>Good (with lookup)</td>
+                            </tr>
+                        </table>
+
+                        <h4>Implementation</h4>
+                        <pre><code class="sql">-- SQL Server: Explicit clustered index
+CREATE TABLE orders (
+    order_id INT,
+    customer_id INT,
+    order_date DATE,
+    CONSTRAINT PK_orders PRIMARY KEY CLUSTERED (order_id)
+);
+
+-- MySQL (InnoDB): Primary key IS clustered
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,  -- This becomes clustered
+    customer_id INT,
+    order_date DATE
+) ENGINE=InnoDB;
+
+-- PostgreSQL: CLUSTER command (not automatic)
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    customer_id INT,
+    order_date DATE
+);
+
+CREATE INDEX idx_orders_date ON orders(order_date);
+CLUSTER orders USING idx_orders_date; -- One-time reorder</code></pre>
+
+                        <h4>Best Practices</h4>
+                        <ul>
+                            <li>✅ Choose narrow, static columns (prefer INT over VARCHAR)</li>
+                            <li>✅ Use ever-increasing values to minimize page splits</li>
+                            <li>✅ Consider query patterns (range scans benefit most)</li>
+                            <li>❌ Avoid frequently updated columns</li>
+                            <li>❌ Avoid wide keys (impacts all non-clustered indexes)</li>
+                        </ul>
+
+                        <div class="key-takeaway">
+                            <strong>💡 Remember:</strong> In SQL Server, the clustered index key is included in all non-clustered indexes. Keep it small!
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="query-execution-plan">
+                    <div class="topic-header">
+                        <span class="topic-icon">📊</span>
+                        <div class="topic-badges">
+                            <span class="badge performance">Performance</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="query-execution-plan" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Query Execution Plan</h3>
+                    <p class="topic-summary">A roadmap showing how the database engine executes your query. Essential for optimization.</p>
+                    <div class="topic-content">
+                        <h4>How to View Execution Plans</h4>
+                        <pre><code class="sql">-- PostgreSQL
+EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON)
+SELECT * FROM orders WHERE customer_id = 123;
+
+-- SQL Server
+SET SHOWPLAN_XML ON;
+-- or use SSMS: Ctrl+M (Actual Execution Plan)
+
+-- MySQL
+EXPLAIN FORMAT=JSON
+SELECT * FROM orders WHERE customer_id = 123;</code></pre>
+
+                        <h4>Understanding Plan Operators</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Operator</th>
+                                <th>Description</th>
+                                <th>Cost</th>
+                            </tr>
+                            <tr>
+                                <td>Index Seek</td>
+                                <td>Quick lookup using index</td>
+                                <td>⭐ Low</td>
+                            </tr>
+                            <tr>
+                                <td>Index Scan</td>
+                                <td>Read entire index</td>
+                                <td>⭐⭐ Medium</td>
+                            </tr>
+                            <tr>
+                                <td>Table Scan</td>
+                                <td>Read entire table</td>
+                                <td>⭐⭐⭐ High</td>
+                            </tr>
+                            <tr>
+                                <td>Key Lookup</td>
+                                <td>Fetch data from table after index</td>
+                                <td>⭐⭐ Medium</td>
+                            </tr>
+                            <tr>
+                                <td>Nested Loop</td>
+                                <td>Join: outer row + inner lookup</td>
+                                <td>Good for small sets</td>
+                            </tr>
+                            <tr>
+                                <td>Hash Match</td>
+                                <td>Join: build hash table</td>
+                                <td>Good for large sets</td>
+                            </tr>
+                            <tr>
+                                <td>Sort</td>
+                                <td>Order results</td>
+                                <td>Memory/CPU intensive</td>
+                            </tr>
+                        </table>
+
+                        <h4>Reading a PostgreSQL Plan</h4>
+                        <pre><code>EXPLAIN ANALYZE SELECT * FROM orders o
+JOIN customers c ON o.customer_id = c.id
+WHERE o.order_date > '2024-01-01';
+
+QUERY PLAN
+────────────────────────────────────────────────────────
+Hash Join  (cost=100.50..500.75 rows=1000 width=200)
+   (actual time=2.1..15.3 rows=850 loops=1)
+   Hash Cond: (o.customer_id = c.id)
+   → Seq Scan on orders o
+        (cost=0.00..350.00 rows=10000 width=150)
+        Filter: (order_date > '2024-01-01')
+   → Hash
+        → Seq Scan on customers c
+             (cost=0.00..50.00 rows=1000 width=50)
+
+Planning Time: 0.5 ms
+Execution Time: 15.8 ms
+
+-- Look for: high cost, high actual time, Seq Scan on large tables</code></pre>
+
+                        <div class="tip-box">
+                            <strong>🔍 Optimization Tips:</strong>
+                            <ul>
+                                <li>Look for "Seq Scan" on large tables → add index</li>
+                                <li>High "actual time" → investigate further</li>
+                                <li>Sort operations → consider index on ORDER BY column</li>
+                                <li>High row estimates vs actual → update statistics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Module 4: Transactions & Concurrency -->
+        <section id="module4" class="section">
+            <div class="section-header">
+                <button class="back-btn" data-section="home">← Back</button>
+                <h2><span class="module-emoji">🔒</span> Transactions & Concurrency</h2>
+            </div>
+            <div class="topics-grid">
+                <article class="topic-card" data-topic="isolation-levels">
+                    <div class="topic-header">
+                        <span class="topic-icon">🛡️</span>
+                        <div class="topic-badges">
+                            <span class="badge concept">Concept</span>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <button class="mark-complete" data-topic="isolation-levels" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Transaction Isolation Levels</h3>
+                    <p class="topic-summary">Define how transactions interact with each other and what anomalies are allowed.</p>
+                    <div class="topic-content">
+                        <h4>The Four Isolation Levels</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Level</th>
+                                <th>Dirty Read</th>
+                                <th>Non-Repeatable</th>
+                                <th>Phantom Read</th>
+                            </tr>
+                            <tr>
+                                <td>READ UNCOMMITTED</td>
+                                <td>✅ Allowed</td>
+                                <td>✅ Allowed</td>
+                                <td>✅ Allowed</td>
+                            </tr>
+                            <tr>
+                                <td>READ COMMITTED</td>
+                                <td>❌ Prevented</td>
+                                <td>✅ Allowed</td>
+                                <td>✅ Allowed</td>
+                            </tr>
+                            <tr>
+                                <td>REPEATABLE READ</td>
+                                <td>❌ Prevented</td>
+                                <td>❌ Prevented</td>
+                                <td>✅ Allowed*</td>
+                            </tr>
+                            <tr>
+                                <td>SERIALIZABLE</td>
+                                <td>❌ Prevented</td>
+                                <td>❌ Prevented</td>
+                                <td>❌ Prevented</td>
+                            </tr>
+                        </table>
+                        <p><em>* PostgreSQL's REPEATABLE READ actually prevents phantoms too</em></p>
+
+                        <h4>Phenomena Explained</h4>
+                        <pre><code class="sql">-- DIRTY READ (reading uncommitted data)
+-- Transaction A                Transaction B
+UPDATE account SET bal=900;
+                              SELECT bal FROM account; -- Sees 900!
+ROLLBACK;                     -- Data was never committed!
+
+-- NON-REPEATABLE READ
+-- Transaction A                Transaction B
+SELECT bal FROM acc; -- 1000
+                              UPDATE acc SET bal=900; COMMIT;
+SELECT bal FROM acc; -- 900 (different!)
+
+-- PHANTOM READ
+-- Transaction A                Transaction B
+SELECT COUNT(*) FROM orders; -- 100
+                              INSERT INTO orders...; COMMIT;
+SELECT COUNT(*) FROM orders; -- 101 (phantom row!)</code></pre>
+
+                        <h4>Setting Isolation Level</h4>
+                        <pre><code class="sql">-- PostgreSQL / SQL Server
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+BEGIN TRANSACTION;
+-- ... your queries
+COMMIT;
+
+-- MySQL (InnoDB)
+SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED;
+START TRANSACTION;
+-- ... your queries
+COMMIT;</code></pre>
+
+                        <div class="tip-box">
+                            <strong>⚖️ Trade-off:</strong> Higher isolation = more consistency but less concurrency and potential deadlocks.
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="deadlock">
+                    <div class="topic-header">
+                        <span class="topic-icon">💀</span>
+                        <div class="topic-badges">
+                            <span class="badge problem">Problem</span>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <button class="mark-complete" data-topic="deadlock" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Deadlock</h3>
+                    <p class="topic-summary">A circular dependency where two or more transactions wait forever for each other.</p>
+                    <div class="topic-content">
+                        <h4>How Deadlocks Occur</h4>
+                        <pre><code class="sql">-- Timeline: Classic deadlock scenario
+
+-- Transaction A                    Transaction B
+BEGIN;                             BEGIN;
+UPDATE accounts                    UPDATE accounts
+   SET balance = 900                 SET balance = 400
+ WHERE id = 1;                    WHERE id = 2;  -- ✅ Gets lock on 2
+ -- ✅ Gets lock on 1
+                                   
+UPDATE accounts                    UPDATE accounts
+   SET balance = 600                 SET balance = 1100
+ WHERE id = 2;                    WHERE id = 1;
+ -- ⏳ Waits for B                  -- ⏳ Waits for A
+ -- 💀 DEADLOCK!                   -- 💀 DEADLOCK!
+
+-- Database detects deadlock and kills one transaction
+-- (usually the one with less work done)</code></pre>
+
+                        <h4>Prevention Strategies</h4>
+                        <pre><code class="sql">-- 1. Consistent ordering (BEST)
+-- Always lock resources in the same order
+UPDATE accounts SET ... WHERE id = LEAST(@a, @b);
+UPDATE accounts SET ... WHERE id = GREATEST(@a, @b);
+
+-- 2. Short transactions
+-- Minimize time locks are held
+BEGIN;
+-- Do only necessary work
+UPDATE ...;  -- Quick!
+COMMIT;      -- Release ASAP
+
+-- 3. Use lower isolation levels when possible
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+-- 4. Optimistic locking for read-heavy workloads
+UPDATE inventory
+SET quantity = quantity - 1, version = version + 1
+WHERE item_id = 123 AND version = @expected_version;</code></pre>
+
+                        <h4>Handling Deadlocks in Application</h4>
+                        <pre><code class="python"># Python example with retry logic
+import time
+
+def execute_with_retry(db, query, max_retries=3):
+    for attempt in range(max_retries):
+        try:
+            db.execute(query)
+            db.commit()
+            return
+        except DeadlockDetected:
+            db.rollback()
+            if attempt < max_retries - 1:
+                time.sleep(0.1 * (attempt + 1))  # Exponential backoff
+            else:
+                raise  # Re-raise after max retries</code></pre>
+
+                        <div class="key-takeaway">
+                            <strong>💡 Key Insight:</strong> You can't completely eliminate deadlocks, but consistent resource ordering reduces them by 99%.
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="locking">
+                    <div class="topic-header">
+                        <span class="topic-icon">🔐</span>
+                        <div class="topic-badges">
+                            <span class="badge concept">Concept</span>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <button class="mark-complete" data-topic="locking" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Optimistic vs Pessimistic Locking</h3>
+                    <p class="topic-summary">Two strategies for handling concurrent data modifications.</p>
+                    <div class="topic-content">
+                        <h4>The Comparison</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Pessimistic Locking</th>
+                                <th>Optimistic Locking</th>
+                            </tr>
+                            <tr>
+                                <td>Approach</td>
+                                <td>Lock first, then read/update</td>
+                                <td>Read, check version, then update</td>
+                            </tr>
+                            <tr>
+                                <td>When to use</td>
+                                <td>High contention, frequent conflicts</td>
+                                <td>Low contention, read-heavy</td>
+                            </tr>
+                            <tr>
+                                <td>Performance</td>
+                                <td>Slower (lock overhead)</td>
+                                <td>Faster (no locks)</td>
+                            </tr>
+                            <tr>
+                                <td>Conflict handling</td>
+                                <td>Wait or timeout</td>
+                                <td>Retry on version mismatch</td>
+                            </tr>
+                        </table>
+
+                        <h4>Pessimistic Locking Examples</h4>
+                        <pre><code class="sql">-- SELECT FOR UPDATE (row-level lock)
+BEGIN;
+SELECT * FROM accounts 
+WHERE id = 123 
+FOR UPDATE;  -- Locks row until commit/rollback
+
+UPDATE accounts SET balance = balance - 100 WHERE id = 123;
+COMMIT;  -- Lock released
+
+-- SELECT FOR SHARE (read lock, others can read)
+SELECT * FROM inventory 
+WHERE product_id = 456 
+FOR SHARE;</code></pre>
+
+                        <h4>Optimistic Locking Examples</h4>
+                        <pre><code class="sql">-- 1. Version column approach
+CREATE TABLE products (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    quantity INT,
+    version INT DEFAULT 0
+);
+
+-- Read
+SELECT id, quantity, version FROM products WHERE id = 1;
+-- Returns: id=1, quantity=100, version=5
+
+-- Update with version check
+UPDATE products 
+SET quantity = 90, version = 6
+WHERE id = 1 AND version = 5;  -- Must match!
+-- If rows affected = 0, someone else updated it
+
+-- 2. Timestamp approach
+UPDATE documents 
+SET content = 'new content', 
+    modified_at = NOW()
+WHERE id = 1 
+AND modified_at = '2024-01-15 10:30:00';  -- Original timestamp</code></pre>
+
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h5>✅ Pessimistic Best For</h5>
+                                <ul>
+                                    <li>Bank transactions</li>
+                                    <li>Inventory management</li>
+                                    <li>High conflict scenarios</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h5>✅ Optimistic Best For</h5>
+                                <ul>
+                                    <li>Content editing</li>
+                                    <li>Social media updates</li>
+                                    <li>Read-heavy workloads</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="two-phase-commit">
+                    <div class="topic-header">
+                        <span class="topic-icon">🤝</span>
+                        <div class="topic-badges">
+                            <span class="badge distributed">Distributed</span>
+                            <span class="badge expert">Expert</span>
+                        </div>
+                        <button class="mark-complete" data-topic="two-phase-commit" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Two-Phase Commit (2PC)</h3>
+                    <p class="topic-summary">A distributed transaction protocol ensuring atomicity across multiple databases.</p>
+                    <div class="topic-content">
+                        <h4>The Two Phases</h4>
+                        <div class="phase-box">
+                            <div class="phase">
+                                <h5>Phase 1: Voting/Prepare</h5>
+                                <ol>
+                                    <li>Coordinator asks all participants to prepare</li>
+                                    <li>Each participant executes locally and writes to redo log</li>
+                                    <li>Participants reply YES (ready) or NO (cannot commit)</li>
+                                </ol>
+                            </div>
+                            <div class="phase">
+                                <h5>Phase 2: Commit/Abort</h5>
+                                <ol>
+                                    <li>If all YES → Coordinator sends COMMIT</li>
+                                    <li>If any NO → Coordinator sends ROLLBACK</li>
+                                    <li>Participants acknowledge completion</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <h4>Visual Flow</h4>
+                        <pre><code>Coordinator          Database A          Database B
+    |                     |                   |
+    |---- PREPARE ------> |                   |
+    |---- PREPARE --------------------------> |
+    |                     |                   |
+    |<---- YES -----------|                   |
+    |<---- YES -------------------------------|
+    |                     |                   |
+    |---- COMMIT ------>  |                   |
+    |---- COMMIT ---------------------------> |
+    |                     |                   |
+    |<---- ACK -----------|                   |
+    |<---- ACK -------------------------------|
+    |                     |                   |</code></pre>
+
+                        <h4>PostgreSQL Implementation</h4>
+                        <pre><code class="sql">-- Coordinator node
+BEGIN;
+-- ... operations on coordinator
+
+PREPARE TRANSACTION 'transfer_12345';
+-- Transaction is now prepared, can survive crash
+
+-- Later: commit or rollback
+COMMIT PREPARED 'transfer_12345';
+-- or
+ROLLBACK PREPARED 'transfer_12345';</code></pre>
+
+                        <h4>Trade-offs</h4>
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h5>✅ Guarantees</h5>
+                                <ul>
+                                    <li>Atomic across nodes</li>
+                                    <li>All commit or all abort</li>
+                                    <li>Durable after prepare</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h5>❌ Limitations</h5>
+                                <ul>
+                                    <li>Blocking (participants hold locks)</li>
+                                    <li>Coordinator is single point of failure</li>
+                                    <li>Slower than local transactions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="warning-box">
+                            <strong>⚠️ Modern Alternative:</strong> Consider Saga pattern or event-driven architectures for microservices instead of 2PC. More complex but better availability.
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="snapshot-isolation">
+                    <div class="topic-header">
+                        <span class="topic-icon">📸</span>
+                        <div class="topic-badges">
+                            <span class="badge concept">Concept</span>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <button class="mark-complete" data-topic="snapshot-isolation" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Snapshot Isolation</h3>
+                    <p class="topic-summary">Each transaction sees a consistent snapshot of the database at its start time.</p>
+                    <div class="topic-content">
+                        <h4>How Snapshot Isolation Works</h4>
+                        <pre><code class="sql">-- Transaction starts at T1
+BEGIN TRANSACTION ISOLATION LEVEL SNAPSHOT; -- SQL Server
+-- or in PostgreSQL: BEGIN (REPEATABLE READ provides SI)
+
+-- Transaction sees database as it was at T1
+-- regardless of other committed changes
+
+-- PostgreSQL default (READ COMMITTED vs REPEATABLE READ)
+BEGIN;  -- READ COMMITTED (default)
+SELECT * FROM accounts WHERE id = 1; -- Balance: 1000
+-- Another transaction commits: UPDATE accounts SET balance = 900
+SELECT * FROM accounts WHERE id = 1; -- Balance: 900 (sees committed!)
+
+BEGIN ISOLATION LEVEL REPEATABLE READ;
+SELECT * FROM accounts WHERE id = 1; -- Balance: 1000
+-- Another transaction commits: UPDATE accounts SET balance = 900
+SELECT * FROM accounts WHERE id = 1; -- Balance: 1000 (snapshot!)
+COMMIT;</code></pre>
+
+                        <h4>Write Skew Anomaly</h4>
+                        <pre><code class="sql">-- Snapshot Isolation allows Write Skew (not serializable!)
+
+-- Constraint: at least one doctor must be on call
+-- Initial: Doctor A on call, Doctor B on call
+
+-- Transaction A (Doctor A checking)
+BEGIN;
+SELECT COUNT(*) FROM on_call WHERE on_call = true; -- Returns 2
+-- Check passed, can go off duty...
+
+-- Transaction B (Doctor B checking, concurrently)
+BEGIN;
+SELECT COUNT(*) FROM on_call WHERE on_call = true; -- Returns 2
+-- Check passed, can go off duty...
+
+-- Transaction A
+UPDATE on_call SET on_call = false WHERE doctor_id = 'A';
+COMMIT;
+
+-- Transaction B (still sees 2 from its snapshot!)
+UPDATE on_call SET on_call = false WHERE doctor_id = 'B';
+COMMIT;
+
+-- Result: No doctors on call! 😱</code></pre>
+
+                        <h4>Serializable Snapshot Isolation (SSI)</h4>
+                        <pre><code class="sql">-- PostgreSQL 9.1+ provides true serializability with SSI
+BEGIN ISOLATION LEVEL SERIALIZABLE;
+-- Detects potential conflicts and aborts one transaction
+
+-- SQL Server snapshot with conflict detection
+SET ALLOW_SNAPSHOT_ISOLATION ON;
+-- Uses row versioning, detects conflicts on write</code></pre>
+
+                        <div class="key-takeaway">
+                            <strong>💡 Remember:</strong> Snapshot Isolation prevents dirty reads, non-repeatable reads, and phantoms, but NOT write skew. Use Serializable isolation if write skew is a concern.
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Module 5: Data Warehousing -->
+        <section id="module5" class="section">
+            <div class="section-header">
+                <button class="back-btn" data-section="home">← Back</button>
+                <h2><span class="module-emoji">🏭</span> Data Warehousing</h2>
+            </div>
+            <div class="topics-grid">
+                <article class="topic-card" data-topic="etl-vs-elt">
+                    <div class="topic-header">
+                        <span class="topic-icon">🔄</span>
+                        <div class="topic-badges">
+                            <span class="badge architecture">Architecture</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="etl-vs-elt" title="Mark as complete">○</button>
+                    </div>
+                    <h3>ETL vs ELT</h3>
+                    <p class="topic-summary">Two approaches to data integration: Extract-Transform-Load vs Extract-Load-Transform.</p>
+                    <div class="topic-content">
+                        <h4>The Fundamental Difference</h4>
+                        <div class="comparison-box">
+                            <div class="comparison-item">
+                                <h5>ETL (Traditional)</h5>
+                                <pre>Source → Extract → Transform → Load → Warehouse
+         ↑_____________↓
+         Transformation happens
+         BEFORE loading
+         (in staging area)</pre>
+                            </div>
+                            <div class="comparison-item">
+                                <h5>ELT (Modern)</h5>
+                                <pre>Source → Extract → Load → Transform → Warehouse
+                        ↑_____________↓
+                        Transformation happens
+                        AFTER loading
+                        (in the warehouse)</pre>
+                            </div>
+                        </div>
+
+                        <h4>When to Use Each</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Scenario</th>
+                                <th>Choose</th>
+                                <th>Why</th>
+                            </tr>
+                            <tr>
+                                <td>Legacy systems, strict governance</td>
+                                <td>ETL</td>
+                                <td>Clean before warehouse</td>
+                            </tr>
+                            <tr>
+                                <td>Cloud data warehouses (Snowflake, BigQuery)</td>
+                                <td>ELT</td>
+                                <td>Massive compute power</td>
+                            </tr>
+                            <tr>
+                                <td>Complex transformations needed</td>
+                                <td>ETL</td>
+                                <td>Specialized tools (Informatica)</td>
+                            </tr>
+                            <tr>
+                                <td>Raw data needed for exploration</td>
+                                <td>ELT</td>
+                                <td>Store everything, transform later</td>
+                            </tr>
+                            <tr>
+                                <td>Small/medium data volumes</td>
+                                <td>ETL</td>
+                                <td>Traditional tools work fine</td>
+                            </tr>
+                            <tr>
+                                <td>Big Data / Data Lake</td>
+                                <td>ELT</td>
+                                <td>Scale-out processing</td>
+                            </tr>
+                        </table>
+
+                        <h4>Tool Examples</h4>
+                        <pre><code class="sql">-- ETL Tools: Informatica, Talend, SSIS, DataStage
+-- ELT Tools: dbt, Fivetran + Snowflake/BigQuery
+
+-- ELT Example with dbt (SQL-based transformations)
+-- 1. Raw data loaded to warehouse
+-- 2. dbt models transform in SQL
+
+-- models/staging/stg_orders.sql
+SELECT 
+    order_id,
+    customer_id,
+    order_date,
+    amount,
+    CASE 
+        WHEN amount > 1000 THEN 'high'
+        WHEN amount > 100 THEN 'medium'
+        ELSE 'low'
+    END as order_tier
+FROM raw.orders
+
+-- models/marts/fct_sales.sql (aggregated)
+SELECT 
+    DATE_TRUNC('month', order_date) as month,
+    COUNT(*) as order_count,
+    SUM(amount) as total_revenue
+FROM {{ ref('stg_orders') }}
+GROUP BY 1</code></pre>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="star-schema">
+                    <div class="topic-header">
+                        <span class="topic-icon">⭐</span>
+                        <div class="topic-badges">
+                            <span class="badge design">Design</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="star-schema" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Star Schema</h3>
+                    <p class="topic-summary">A dimensional modeling design with a central fact table surrounded by dimension tables.</p>
+                    <div class="topic-content">
+                        <h4>Schema Structure</h4>
+                        <pre><code>                    ┌─────────────┐
+                    │ dim_date    │
+                    │─────────────│
+                    │ date_key PK │
+                    │ full_date   │
+                    │ year        │
+                    │ month       │
+                    │ day         │
+                    └──────┬──────┘
+                           │
+    ┌─────────┐    ┌───────┴───────┐    ┌──────────┐
+    │dim_product│    │  fact_sales   │    │dim_store │
+    │─────────│    │───────────────│    │──────────│
+    │product_ │◄───┤ product_key FK│───►│ store_key│
+    │  key PK │    │ store_key  FK │    │   PK     │
+    │ name    │    │ date_key   FK │    │ name     │
+    │ category│    │───────────────│    │ region   │
+    │ brand   │    │ quantity      │    └──────────┘
+    └─────────┘    │ revenue       │
+                   │ cost          │
+                   └───────────────┘</code></pre>
+
+                        <h4>Table Types</h4>
+                        <pre><code class="sql">-- FACT TABLE: Contains measurements/metrics
+CREATE TABLE fact_sales (
+    -- Foreign Keys to dimensions
+    date_key INT REFERENCES dim_date(date_key),
+    product_key INT REFERENCES dim_product(product_key),
+    store_key INT REFERENCES dim_store(store_key),
+    
+    -- Degenerate dimension (no separate table needed)
+    order_number VARCHAR(20),
+    
+    -- Measures (numeric, aggregatable)
+    quantity INT,
+    unit_price DECIMAL(10,2),
+    discount_amount DECIMAL(10,2),
+    sales_amount DECIMAL(12,2),
+    cost_amount DECIMAL(12,2),
+    
+    PRIMARY KEY (date_key, product_key, store_key, order_number)
+);
+
+-- DIMENSION TABLE: Contains descriptive attributes
+CREATE TABLE dim_product (
+    product_key INT PRIMARY KEY,  -- Surrogate key
+    product_id VARCHAR(20),        -- Natural key
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    subcategory VARCHAR(50),
+    brand VARCHAR(50),
+    supplier VARCHAR(50),
+    -- Slowly Changing Dimension Type 2 columns
+    effective_date DATE,
+    expiration_date DATE,
+    is_current BOOLEAN
+);</code></pre>
+
+                        <h4>Star vs Snowflake Schema</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Star Schema</th>
+                                <th>Snowflake Schema</th>
+                            </tr>
+                            <tr>
+                                <td>Dimensions are denormalized</td>
+                                <td>Dimensions are normalized</td>
+                            </tr>
+                            <tr>
+                                <td>Simple, fewer joins</td>
+                                <td>More joins, complex</td>
+                            </tr>
+                            <tr>
+                                <td>Faster queries</td>
+                                <td>Less storage, more flexible</td>
+                            </tr>
+                            <tr>
+                                <td>Preferred for most DW</td>
+                                <td>Rarely used today</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="olap-vs-oltp">
+                    <div class="topic-header">
+                        <span class="topic-icon">⚖️</span>
+                        <div class="topic-badges">
+                            <span class="badge concept">Concept</span>
+                            <span class="badge beginner">Beginner</span>
+                        </div>
+                        <button class="mark-complete" data-topic="olap-vs-oltp" title="Mark as complete">○</button>
+                    </div>
+                    <h3>OLAP vs OLTP</h3>
+                    <p class="topic-summary">Online Analytical Processing vs Online Transaction Processing - two distinct database workloads.</p>
+                    <div class="topic-content">
+                        <h4>Side-by-Side Comparison</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Characteristic</th>
+                                <th>OLTP</th>
+                                <th>OLAP</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Purpose</strong></td>
+                                <td>Run the business</td>
+                                <td>Analyze the business</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data operations</strong></td>
+                                <td>INSERT, UPDATE, DELETE</td>
+                                <td>SELECT (read-heavy)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Query complexity</strong></td>
+                                <td>Simple, short queries</td>
+                                <td>Complex aggregations</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Data volume</strong></td>
+                                <td>GB to TB (current data)</td>
+                                <td>TB to PB (historical)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Users</strong></td>
+                                <td>Thousands (customers, clerks)</td>
+                                <td>Hundreds (analysts, executives)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Schema</strong></td>
+                                <td>Normalized (3NF)</td>
+                                <td>Denormalized (Star/Snowflake)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Response time</strong></td>
+                                <td>Milliseconds</td>
+                                <td>Seconds to minutes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Backup</strong></td>
+                                <td>Regular, operational</td>
+                                <td>Periodic, after load</td>
+                            </tr>
+                        </table>
+
+                        <h4>Typical Examples</h4>
+                        <pre><code class="sql">-- OLTP Example: E-commerce order processing
+-- Fast, single-row operations
+INSERT INTO orders (customer_id, product_id, quantity)
+VALUES (123, 456, 2);
+
+UPDATE inventory 
+SET quantity = quantity - 2 
+WHERE product_id = 456;
+
+-- OLAP Example: Sales analysis
+-- Complex aggregation across dimensions
+SELECT 
+    d.year,
+    d.quarter,
+    p.category,
+    s.region,
+    SUM(f.revenue) as total_revenue,
+    AVG(f.margin) as avg_margin,
+    COUNT(DISTINCT f.customer_key) as unique_customers
+FROM fact_sales f
+JOIN dim_date d ON f.date_key = d.date_key
+JOIN dim_product p ON f.product_key = p.product_key
+JOIN dim_store s ON f.store_key = s.store_key
+WHERE d.year BETWEEN 2020 AND 2024
+GROUP BY d.year, d.quarter, p.category, s.region
+ORDER BY d.year, d.quarter, total_revenue DESC;</code></pre>
+
+                        <h4>Modern Hybrid: HTAP</h4>
+                        <div class="info-box">
+                            <strong>Hybrid Transactional/Analytical Processing</strong> systems like TiDB, CockroachDB, and SQL Server Columnstore allow both workloads on the same data, eliminating ETL delays.
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Module 6: Advanced Features -->
+        <section id="module6" class="section">
+            <div class="section-header">
+                <button class="back-btn" data-section="home">← Back</button>
+                <h2><span class="module-emoji">🚀</span> Advanced Features</h2>
+            </div>
+            <div class="topics-grid">
+                <article class="topic-card" data-topic="rank-functions">
+                    <div class="topic-header">
+                        <span class="topic-icon">🏆</span>
+                        <div class="topic-badges">
+                            <span class="badge syntax">Syntax</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="rank-functions" title="Mark as complete">○</button>
+                    </div>
+                    <h3>RANK() vs DENSE_RANK()</h3>
+                    <p class="topic-summary">Window functions for ranking rows with different handling of ties.</p>
+                    <div class="topic-content">
+                        <h4>The Difference</h4>
+                        <pre><code class="sql">-- Sample data: Employee salaries
+-- Name     | Salary | RANK | DENSE_RANK | ROW_NUMBER
+-- Alice    | 100000 |  1   |     1      |     1
+-- Bob      |  95000 |  2   |     2      |     2
+-- Charlie  |  95000 |  2   |     2      |     3
+-- Diana    |  90000 |  4   |     3      |     4
+-- (RANK skips 3, DENSE_RANK continues with 3)
+
+SELECT 
+    name,
+    salary,
+    RANK() OVER (ORDER BY salary DESC) as rank,
+    DENSE_RANK() OVER (ORDER BY salary DESC) as dense_rank,
+    ROW_NUMBER() OVER (ORDER BY salary DESC) as row_num
+FROM employees;</code></pre>
+
+                        <h4>Visual Comparison</h4>
+                        <div class="comparison-box">
+                            <div class="comparison-item">
+                                <h5>RANK()</h5>
+                                <ul>
+                                    <li>Ties get same rank</li>
+                                    <li><strong>Next rank skips numbers</strong></li>
+                                    <li>1, 2, 2, 4, 5...</li>
+                                </ul>
+                            </div>
+                            <div class="comparison-item">
+                                <h5>DENSE_RANK()</h5>
+                                <ul>
+                                    <li>Ties get same rank</li>
+                                    <li><strong>No gaps in ranking</strong></li>
+                                    <li>1, 2, 2, 3, 4...</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h4>Practical Examples</h4>
+                        <pre><code class="sql">-- Top 3 salaries (with ties)
+-- Use RANK() if you want "top 3 ranks" including all ties
+SELECT name, salary
+FROM (
+    SELECT 
+        name, salary,
+        RANK() OVER (ORDER BY salary DESC) as r
+    FROM employees
+) ranked
+WHERE r <= 3;
+-- Might return 4 people if there's a tie for 3rd
+
+-- Use DENSE_RANK() if you want exactly 3 distinct values
+SELECT name, salary
+FROM (
+    SELECT 
+        name, salary,
+        DENSE_RANK() OVER (ORDER BY salary DESC) as dr
+    FROM employees
+) ranked
+WHERE dr <= 3;
+-- Returns exactly 3 groups (might be more than 3 people)
+
+-- Top N per category
+SELECT category, product_name, revenue
+FROM (
+    SELECT 
+        category,
+        product_name,
+        revenue,
+        RANK() OVER (
+            PARTITION BY category 
+            ORDER BY revenue DESC
+        ) as rank_in_category
+    FROM product_sales
+) ranked
+WHERE rank_in_category <= 3;</code></pre>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="row-level-security">
+                    <div class="topic-header">
+                        <span class="topic-icon">🛡️</span>
+                        <div class="topic-badges">
+                            <span class="badge security">Security</span>
+                            <span class="badge advanced">Advanced</span>
+                        </div>
+                        <button class="mark-complete" data-topic="row-level-security" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Row-Level Security (RLS)</h3>
+                    <p class="topic-summary">Restrict access to rows based on user attributes, enforced by the database.</p>
+                    <div class="topic-content">
+                        <h4>PostgreSQL RLS</h4>
+                        <pre><code class="sql">-- Enable RLS on table
+ALTER TABLE orders ENABLE ROW LEVEL SECURITY;
+
+-- Create policy: users see only their orders
+CREATE POLICY user_orders_policy ON orders
+    FOR ALL
+    TO application_users
+    USING (customer_id = current_setting('app.current_user_id')::INT);
+
+-- Set user context in application
+SET app.current_user_id = '123';
+
+-- Now queries automatically filter
+SELECT * FROM orders; -- Only sees customer_id = 123
+
+-- Multiple policies example
+CREATE POLICY manager_sees_team_orders ON orders
+    FOR SELECT
+    TO managers
+    USING (customer_id IN (
+        SELECT customer_id FROM team_customers 
+        WHERE manager_id = current_user_id()
+    ));
+
+-- Bypass RLS for admins
+ALTER TABLE orders FORCE ROW LEVEL SECURITY;
+-- Admins need explicit bypass privilege:
+-- GRANT BYPASSRLS TO admin_user;</code></pre>
+
+                        <h4>SQL Server RLS</h4>
+                        <pre><code class="sql">-- Create predicate function
+CREATE FUNCTION dbo.fn_securitypredicate(@customerId INT)
+RETURNS TABLE
+WITH SCHEMABINDING
+AS
+RETURN SELECT 1 AS fn_securitypredicate_result
+WHERE 
+    -- User sees their own data
+    @customerId = CAST(SESSION_CONTEXT(N'userId') AS INT)
+    -- Or admin sees all
+    OR IS_MEMBER('db_owner') = 1;
+GO
+
+-- Create security policy
+CREATE SECURITY POLICY CustomerFilterPolicy
+    ADD FILTER PREDICATE dbo.fn_securitypredicate(customer_id)
+    ON dbo.orders,
+    ADD BLOCK PREDICATE dbo.fn_securitypredicate(customer_id)
+    ON dbo.orders AFTER INSERT
+WITH (STATE = ON, SCHEMABINDING = ON);
+GO
+
+-- Set context in application
+EXEC sp_set_session_context 'userId', 123;</code></pre>
+
+                        <h4>Use Cases</h4>
+                        <ul>
+                            <li>✅ Multi-tenant applications (SaaS)</li>
+                            <li>✅ Compliance (GDPR data separation)</li>
+                            <li>✅ Simplified application code</li>
+                            <li>✅ Centralized security policy</li>
+                        </ul>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="full-text-search">
+                    <div class="topic-header">
+                        <span class="topic-icon">🔎</span>
+                        <div class="topic-badges">
+                            <span class="badge feature">Feature</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="full-text-search" title="Mark as complete">○</button>
+                    </div>
+                    <h3>PostgreSQL Full-Text Search</h3>
+                    <p class="topic-summary">Native text search with stemming, ranking, and relevance scoring.</p>
+                    <div class="topic-content">
+                        <h4>Basic Usage</h4>
+                        <pre><code class="sql">-- Simple search (not using FTS - SLOW!)
+SELECT * FROM articles 
+WHERE content LIKE '%database%';  -- Table scan!
+
+-- Full-text search (FAST!)
+SELECT * FROM articles 
+WHERE to_tsvector('english', content) @@ to_tsquery('database');
+
+-- Create GIN index for speed
+CREATE INDEX idx_articles_fts ON articles 
+USING GIN (to_tsvector('english', content));
+
+-- With ranking
+SELECT 
+    title,
+    ts_rank(
+        to_tsvector('english', content),
+        to_tsquery('english', 'postgresql & database')
+    ) as relevance
+FROM articles
+WHERE to_tsvector('english', content) @@ 
+      to_tsquery('english', 'postgresql & database')
+ORDER BY relevance DESC;</code></pre>
+
+                        <h4>Query Operators</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Operator</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                            </tr>
+                            <tr>
+                                <td>&</td>
+                                <td>AND</td>
+                                <td>'postgresql & database'</td>
+                            </tr>
+                            <tr>
+                                <td>|</td>
+                                <td>OR</td>
+                                <td>'postgresql | mysql'</td>
+                            </tr>
+                            <tr>
+                                <td>!</td>
+                                <td>NOT</td>
+                                <td>'database !oracle'</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;-&gt;</td>
+                                <td>Followed by</td>
+                                <td>'data &lt;-&gt; science'</td>
+                            </tr>
+                            <tr>
+                                <td>:*</td>
+                                <td>Prefix</td>
+                                <td>'data:*'</td>
+                            </tr>
+                        </table>
+
+                        <h4>Advanced: Generated Column (PostgreSQL 12+)</h4>
+                        <pre><code class="sql">-- Store tsvector for faster queries
+CREATE TABLE articles (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    content TEXT,
+    search_vector tsvector 
+        GENERATED ALWAYS AS (
+            setweight(to_tsvector('english', coalesce(title, '')), 'A') ||
+            setweight(to_tsvector('english', coalesce(content, '')), 'B')
+        ) STORED
+);
+
+CREATE INDEX idx_articles_search ON articles USING GIN(search_vector);
+
+-- Fast search with weights
+SELECT title, ts_rank(search_vector, query) as rank
+FROM articles, plainto_tsquery('english', 'search terms') query
+WHERE search_vector @@ query
+ORDER BY rank DESC;</code></pre>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="rds-vs-aurora">
+                    <div class="topic-header">
+                        <span class="topic-icon">☁️</span>
+                        <div class="topic-badges">
+                            <span class="badge cloud">Cloud</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="rds-vs-aurora" title="Mark as complete">○</button>
+                    </div>
+                    <h3>Amazon RDS vs Aurora</h3>
+                    <p class="topic-summary">AWS managed database options: traditional RDS vs cloud-native Aurora.</p>
+                    <div class="topic-content">
+                        <h4>Key Differences</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Feature</th>
+                                <th>RDS</th>
+                                <th>Aurora</th>
+                            </tr>
+                            <tr>
+                                <td>Architecture</td>
+                                <td>Traditional DB on EC2</td>
+                                <td>Cloud-optimized storage</td>
+                            </tr>
+                            <tr>
+                                <td>Storage</td>
+                                <td>EBS volumes (max 64TB)</td>
+                                <td>Distributed (max 128TB)</td>
+                            </tr>
+                            <tr>
+                                <td>Replicas</td>
+                                <td>Up to 5 read replicas</td>
+                                <td>Up to 15 read replicas</td>
+                            </tr>
+                            <tr>
+                                <td>Failover</td>
+                                <td>60-120 seconds</td>
+                                <td>&lt; 30 seconds</td>
+                            </tr>
+                            <tr>
+                                <td>Performance</td>
+                                <td>Standard</td>
+                                <td>3-5x better</td>
+                            </tr>
+                            <tr>
+                                <td>Cost</td>
+                                <td>Lower per GB</td>
+                                <td>Lower I/O costs</td>
+                            </tr>
+                            <tr>
+                                <td>Multi-AZ</td>
+                                <td>Synchronous replica</td>
+                                <td>6 copies across 3 AZs</td>
+                            </tr>
+                        </table>
+
+                        <h4>Aurora Architecture</h4>
+                        <pre><code>┌─────────────────────────────────────────┐
+│           Compute Layer                 │
+│  ┌─────────┐    ┌─────────┐            │
+│  │ Primary │◄──►│ Replica │ (up to 15) │
+│  │  Node   │    │  Nodes  │            │
+│  └────┬────┘    └────┬────┘            │
+└───────┼──────────────┼────────────────┘
+        │              │
+        └──────────────┘
+               │
+┌──────────────┴─────────────────────────┐
+│        Shared Storage Layer            │
+│   6-way replication across 3 AZs       │
+│   (4/6 write quorum, 3/6 read)         │
+└────────────────────────────────────────┘</code></pre>
+
+                        <h4>When to Choose</h4>
+                        <div class="pros-cons">
+                            <div class="pros">
+                                <h5>✅ Choose RDS When</h5>
+                                <ul>
+                                    <li>Budget is tight</li>
+                                    <li>Need specific DB version</li>
+                                    <li>SQL Server/Oracle required</li>
+                                    <li>Simple workloads</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h5>✅ Choose Aurora When</h5>
+                                <ul>
+                                    <li>High throughput needed</li>
+                                    <li>Many read replicas</li>
+                                    <li>Fast failover critical</li>
+                                    <li>MySQL/PostgreSQL compatible</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+
+                <article class="topic-card" data-topic="ntile">
+                    <div class="topic-header">
+                        <span class="topic-icon">📊</span>
+                        <div class="topic-badges">
+                            <span class="badge syntax">Syntax</span>
+                            <span class="badge intermediate">Intermediate</span>
+                        </div>
+                        <button class="mark-complete" data-topic="ntile" title="Mark as complete">○</button>
+                    </div>
+                    <h3>NTILE(n)</h3>
+                    <p class="topic-summary">Distribute rows into a specified number of approximately equal groups (buckets).</p>
+                    <div class="topic-content">
+                        <h4>Basic Usage</h4>
+                        <pre><code class="sql">-- Divide employees into 4 salary quartiles
+SELECT 
+    name,
+    salary,
+    NTILE(4) OVER (ORDER BY salary) as quartile
+FROM employees;
+
+-- Result: Each row gets bucket 1, 2, 3, or 4
+-- Bucket 1 = lowest 25% salaries
+-- Bucket 4 = highest 25% salaries
+
+-- With 10 employees, distribution:
+-- Rows 1,2,3 → Bucket 1
+-- Rows 4,5,6 → Bucket 2  
+-- Rows 7,8   → Bucket 3
+-- Rows 9,10  → Bucket 4
+-- (Uneven when rows % n != 0)</code></pre>
+
+                        <h4>Common Use Cases</h4>
+                        <pre><code class="sql">-- 1. Customer segmentation (quintiles)
+SELECT 
+    customer_id,
+    total_spent,
+    NTILE(5) OVER (ORDER BY total_spent DESC) as spending_tier,
+    CASE NTILE(5) OVER (ORDER BY total_spent DESC)
+        WHEN 1 THEN 'VIP'
+        WHEN 2 THEN 'High Value'
+        WHEN 3 THEN 'Medium'
+        WHEN 4 THEN 'Low'
+        WHEN 5 THEN 'At Risk'
+    END as segment
+FROM customer_summary;
+
+-- 2. Percentile calculation
+SELECT 
+    student_name,
+    score,
+    NTILE(100) OVER (ORDER BY score) as percentile
+FROM test_scores;
+
+-- 3. Pagination alternative (get page 3 of 10)
+SELECT * FROM (
+    SELECT 
+        *,
+        NTILE(10) OVER (ORDER BY id) as page
+    FROM large_table
+) paged
+WHERE page = 3;</code></pre>
+
+                        <h4>NTILE vs Other Functions</h4>
+                        <table class="comparison-table">
+                            <tr>
+                                <th>Function</th>
+                                <th>Result</th>
+                                <th>Use For</th>
+                            </tr>
+                            <tr>
+                                <td>NTILE(4)</td>
+                                <td>1,2,3,4 (equal buckets)</td>
+                                <td>Quartiles, percentiles</td>
+                            </tr>
+                            <tr>
+                                <td>PERCENT_RANK()</td>
+                                <td>0.0 to 1.0</td>
+                                <td>Relative position</td>
+                            </tr>
+                            <tr>
+                                <td>CUME_DIST()</td>
+                                <td>0.0 to 1.0</td>
+                                <td>Cumulative distribution</td>
+                            </tr>
+                            <tr>
+                                <td>WIDTH_BUCKET()</td>
+                                <td>Bucket by value range</td>
+                                <td>Histogram bins</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <button class="expand-btn">Read More ↓</button>
+                </article>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>🗄️ Database Learning Hub — Master the art of data</p>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
